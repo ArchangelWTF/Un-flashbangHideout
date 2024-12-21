@@ -8,14 +8,14 @@ namespace UnflashbangHideout
 {
     internal class PatchSuperSampling : ModulePatch
     {
-        protected override MethodBase GetTargetMethod() => typeof(CameraClass).GetMethod("SetSuperSampling", BindingFlags.Public | BindingFlags.Instance);
+        protected override MethodBase GetTargetMethod() => typeof(CameraClass).GetMethod(nameof(CameraClass.SetSuperSampling), BindingFlags.Public | BindingFlags.Instance);
 
         [PatchPrefix]
-        private static bool PatchPrefix(float sampling)
+        public static bool PatchPrefix(float sampling)
         {
             try
             {
-                var Gameworld = Singleton<GameWorld>.Instance;
+                GameWorld Gameworld = Singleton<GameWorld>.Instance;
 
                 if (Gameworld.MainPlayer.Location == "hideout")
                 {

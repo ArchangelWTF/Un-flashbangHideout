@@ -2,7 +2,7 @@
 
 namespace UnflashbangHideout
 {
-    [BepInPlugin("spt.unflashbang.hideout", "Un-flashbang Hideout", "1.0.1")]
+    [BepInPlugin("com.archangelwtf.unflashbanghideout", "Un-flashbang Hideout", "1.0.2")]
     public class Plugin : BaseUnityPlugin
     {
         public void Awake()
