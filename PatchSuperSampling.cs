@@ -1,12 +1,11 @@
-﻿using System;
-using System.Reflection;
-using SPT.Reflection.Patching;
-using Comfort.Common;
+﻿using Comfort.Common;
 using EFT;
+using SPT.Reflection.Patching;
+using System.Reflection;
 
 namespace UnflashbangHideout
 {
-    internal class PatchSuperSampling : ModulePatch
+    public class PatchSuperSampling : ModulePatch
     {
         protected override MethodBase GetTargetMethod() => typeof(CameraClass).GetMethod(nameof(CameraClass.SetSuperSampling), BindingFlags.Public | BindingFlags.Instance);
 
